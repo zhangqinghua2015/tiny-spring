@@ -46,8 +46,9 @@ public class JdkDynamicAopProxyTest {
 //		byte[] classFile = ProxyGenerator.generateProxyClass("$Proxy2", new Class[]{HelloWorldService.class});
 //		FileOutputStream out = null;
 //		try {
-//			File file = new File("$Proxy2.class");
-//			out = new FileOutputStream(file);
+////			File file = new File(System.getProperty("user.dir") + File.pathSeparator + "$Proxy2.class");
+////			out = new FileOutputStream(file);
+//			out = new FileOutputStream("$Proxy2.class");
 //			out.write(classFile);
 //			out.flush();
 //		} catch (Exception e) {
