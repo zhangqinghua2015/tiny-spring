@@ -1,6 +1,12 @@
 package us.codecraft.tinyioc.aop;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import org.junit.Test;
+
+import sun.misc.ProxyGenerator;
 import us.codecraft.tinyioc.HelloWorldService;
 import us.codecraft.tinyioc.HelloWorldServiceImpl;
 import us.codecraft.tinyioc.context.ApplicationContext;
@@ -36,5 +42,22 @@ public class JdkDynamicAopProxyTest {
 		// 4. 基于AOP的调用
 		helloWorldServiceProxy.helloWorld();
 
+		// 将反射生成的类字节码输出到文件
+//		byte[] classFile = ProxyGenerator.generateProxyClass("$Proxy2", new Class[]{HelloWorldService.class});
+//		FileOutputStream out = null;
+//		try {
+//			File file = new File("$Proxy2.class");
+//			out = new FileOutputStream(file);
+//			out.write(classFile);
+//			out.flush();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				out.close();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
 	}
 }
